@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en"xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="${product.title}"></title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="container">
+    <h2>Product information</h2>
+    <h3 th:text="${'ID: ' + product.id}"></h3>
+    <h3 th:text="${'Name: ' + product.title}"></h3>
+    <h3 th:text="${'Score: ' + product.cost}"></h3>
+    <a th:href="@{'/all_products'}"  class="btn btn-primary">Products List</a>
+</div>
+</body>
+</html>
