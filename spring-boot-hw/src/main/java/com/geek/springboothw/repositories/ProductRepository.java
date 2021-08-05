@@ -2,7 +2,6 @@ package com.geek.springboothw.repositories;
 
 import com.geek.springboothw.models.Product;
 import org.springframework.stereotype.Component;
-
 import javax.annotation.PostConstruct;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -39,4 +38,24 @@ public class ProductRepository {
     public void addNewProduct(Product product){
         products.add(product);
     }
+
+    public void minusCost(Long id){
+        for(Product p : products) {
+            if (p.getId().equals(id)) {
+                p.setCost(p.getCost() - 1);
+            }
+        }
+    }
+
+
+    public void plusCost(Long id){
+        for(Product p : products) {
+            if (p.getId().equals(id)) {
+                p.setCost(p.getCost() + 1);
+            }
+        }
+    }
+
+
+
 }

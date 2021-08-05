@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
@@ -15,16 +16,23 @@
             <td>ID</td>
             <td>Title</td>
             <td>Cost</td>
-            <td></td>
+            <td></td></td></td>
         </tr>
         </thead>
         <tbody>
         <tr th:each="p : ${products}">
             <td th:text="${p.id}"></td>
             <td th:text="${p.title}"></td>
-            <td th:text="${p.cost}"></td>
+            <td th:text="${p.cost}">
+            </td>
             <td>
                 <a th:href="@{'/show/' + ${p.id}}" class="btn btn-primary">Info</a>
+            </td>
+            <td>
+                <a th:href="@{'/minusCost/' + ${p.id}}" class="btn btn-primary">Minus cost</a>
+            </td>
+            <td>
+                <a th:href="@{'/plusCost/'  + ${p.id}}" class="btn btn-primary">Plus cost</a>
             </td>
         </tr>
         </tbody>
